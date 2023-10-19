@@ -3,6 +3,8 @@ c 2023-10-18
 m 2023-10-18
 */
 
+float g_dt;
+
 enum ClockStyle {
     Analog,
     Digital

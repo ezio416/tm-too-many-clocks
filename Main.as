@@ -7,11 +7,6 @@ void Main() {
     OnSettingsChanged();
 }
 
-void RenderMenu() {
-    if (UI::MenuItem("\\$FAF" + Icons::ClockO + "\\$G Too Many Clocks", "", S_Enabled))
-        S_Enabled = !S_Enabled;
-}
-
 void OnSettingsChanged() {
     if (S_DigColors) {
         S_DigWeekdayColorStr = "\\" + Text::FormatGameColor(S_DigWeekdayColor);
@@ -45,4 +40,13 @@ void Render() {
 
     RenderAnalog();
     RenderDigital();
+}
+
+void RenderMenu() {
+    if (UI::MenuItem("\\$FAF" + Icons::ClockO + "\\$G Too Many Clocks", "", S_Enabled))
+        S_Enabled = !S_Enabled;
+}
+
+void Update(float dt) {
+    g_dt = dt;
 }
