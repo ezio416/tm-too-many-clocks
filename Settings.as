@@ -3,8 +3,7 @@ c 2023-10-18
 m 2023-10-18
 */
 
-
-[Setting category="Visibility" name="Enable clock"]
+[Setting category="Visibility" name="Enabled"]
 bool S_Enabled = false;
 
 [Setting category="Visibility" name="Show/hide with game UI"]
