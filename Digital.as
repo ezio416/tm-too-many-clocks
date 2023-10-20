@@ -1,23 +1,7 @@
 /*
 c 2023-10-18
-m 2023-10-18
+m 2023-10-19
 */
-
-float g_dt;
-
-enum ClockStyle {
-    Analog,
-    Digital
-}
-
-void RenderAnalog() {
-    if (S_ClockStyle == ClockStyle::Digital)
-        return;
-
-    int64 now = Time::Stamp;
-
-    ;
-}
 
 void RenderDigital() {
     if (S_ClockStyle == ClockStyle::Analog)

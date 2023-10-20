@@ -1,7 +1,12 @@
 /*
 c 2023-10-18
-m 2023-10-18
+m 2023-10-19
 */
+
+enum ClockStyle {
+    Analog,
+    Digital
+}
 
 void Main() {
     OnSettingsChanged();
