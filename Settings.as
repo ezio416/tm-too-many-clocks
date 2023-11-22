@@ -125,11 +125,11 @@ vec3 S_DigAmPmColor = vec3(1.0f, 1.0f, 1.0f);
 string S_DigAmPmColorStr;
 
 
-[Setting category="Digital Position" name="Position X" min=0 max=1]
-float S_DigX = 0.25f;
+// [Setting category="Digital Position" name="Position X" min=0 max=1]
+// float S_DigX = 0.25f;
 
-[Setting category="Digital Position" name="Position Y" min=0 max=1]
-float S_DigY = 0.25f;
+// [Setting category="Digital Position" name="Position Y" min=0 max=1]
+// float S_DigY = 0.25f;
 
 
 [SettingsTab name="Links" icon="Link"]
