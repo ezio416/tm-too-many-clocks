@@ -1,7 +1,9 @@
 /*
 c 2023-10-18
-m 2023-10-19
+m 2023-11-22
 */
+
+string title = "\\$FAF" + Icons::ClockO + "\\$G Too Many Clocks";
 
 enum ClockStyle {
     Analog,
@@ -13,6 +15,9 @@ void Main() {
 }
 
 void OnSettingsChanged() {
+    if (currentFont != S_DigFont)
+        ChangeFont();
+
     if (S_DigColors) {
         S_DigWeekdayColorStr = "\\" + Text::FormatGameColor(S_DigWeekdayColor);
         S_DigDateColorStr    = "\\" + Text::FormatGameColor(S_DigDateColor);
@@ -43,15 +48,15 @@ void Render() {
             return;
     }
 
-    RenderAnalog();
+    // RenderAnalog();
     RenderDigital();
 }
 
 void RenderMenu() {
-    if (UI::MenuItem("\\$FAF" + Icons::ClockO + "\\$G Too Many Clocks", "", S_Enabled))
+    if (UI::MenuItem(title, "", S_Enabled))
         S_Enabled = !S_Enabled;
 }
 
-void Update(float dt) {
-    g_dt = dt;
-}
+// void Update(float dt) {
+//     msSinceFrame = dt;
+// }

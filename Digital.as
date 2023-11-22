@@ -12,8 +12,11 @@ void RenderDigital() {
     int flags = UI::WindowFlags::AlwaysAutoResize |
                 UI::WindowFlags::NoTitleBar;
 
-    UI::Begin("TooManyClocks", S_Enabled, flags);
+    if (!UI::IsOverlayShown())
+        flags |= UI::WindowFlags::NoInputs;
 
+    UI::PushFont(font);
+    UI::Begin("TooManyClocks", S_Enabled, flags);
         if (S_DigCustomFormat != "") {
             UI::Text(Time::FormatString(S_DigCustomFormat, now));
             UI::End();
@@ -27,4 +30,5 @@ void RenderDigital() {
 
         UI::Text((S_DigWeekday ? day + " " : "") + (S_DigDate ? date + " " : "") + time + (!S_Dig24h && S_DigAmPm ? " " + amPm : ""));
     UI::End();
+    UI::PopFont();
 }
