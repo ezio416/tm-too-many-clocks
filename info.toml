@@ -2,4 +2,5 @@
 name = "Too Many Clocks"
 author = "Ezio"
 category = "Overlay"
-version = "0.1.0"
+version = "1.0.0"
+siteid = 459
