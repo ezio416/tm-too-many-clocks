@@ -1,6 +1,12 @@
+![Signed](https://img.shields.io/badge/Signed-Yes-00AA00)
+![Number of downloads](https://img.shields.io/badge/dynamic/json?query=downloads&url=https%3A%2F%2Fopenplanet.dev%2Fapi%2Fplugin%2F459&label=Downloads&color=purple)
+![Version](https://img.shields.io/badge/dynamic/json?query=version&url=https%3A%2F%2Fopenplanet.dev%2Fapi%2Fplugin%2F459&label=Version&color=red)
+![Game Trackmania](https://img.shields.io/badge/Game-Trackmania-blue)
+![Game Maniaplanet](https://img.shields.io/badge/Game-Maniaplanet_4-blue)
+![Game Turbo](https://img.shields.io/badge/Game-Turbo-blue)
 # Too Many Clocks
 
-For when you want to know the time, but in style!
+Have you wanted to know what time it is but don't want to tab out of the game? Are you unhappy with the current timekeeping offerings? If so, this plugin is for you! Currently there is only a single digital clock, but there are plans to include an analog one, a hybrid one, and the option to show multiple clocks for different timezones.
 
 
 
