@@ -1,7 +1,5 @@
-/*
-c 2023-10-18
-m 2023-11-22
-*/
+// c 2023-10-18
+// m 2023-11-22
 
 [Setting category="Visibility" name="Enabled"]
 bool S_Enabled = false;
