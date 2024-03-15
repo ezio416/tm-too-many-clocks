@@ -1,11 +1,11 @@
 // c 2023-10-18
-// m 2023-10-19
+// m 2024-03-15
 
 void RenderDigital() {
     if (S_ClockStyle == ClockStyle::Analog)
         return;
 
-    int64 now = Time::Stamp;
+    const int64 now = Time::Stamp;
 
     int flags = UI::WindowFlags::AlwaysAutoResize |
                 UI::WindowFlags::NoTitleBar;
@@ -13,7 +13,6 @@ void RenderDigital() {
     if (!UI::IsOverlayShown())
         flags |= UI::WindowFlags::NoInputs;
 
-    UI::PushFont(font);
     UI::Begin("TooManyClocks", S_Enabled, flags);
         if (S_DigCustomFormat != "") {
             UI::Text(Time::FormatString(S_DigCustomFormat, now));
@@ -21,12 +20,11 @@ void RenderDigital() {
             return;
         }
 
-        string day  = Time::FormatString(S_DigWeekdayColorStr + (S_DigWeekdayFull ? "%A" : "%a"), now);
-        string date = Time::FormatString(S_DigDateColorStr    + "%Y-%m-%d", now);
-        string time = Time::FormatString(S_DigTimeColorStr    + (S_Dig24h ? "%H" : "%I") + ":%M" + (S_DigSeconds ? ":%S" : ""), now);
-        string amPm = Time::FormatString(S_DigAmPmColorStr    + "%p", now);
+        const string day  = Time::FormatString(digWeekdayColor + (S_DigWeekdayFull ? "%A" : "%a"), now);
+        const string date = Time::FormatString(digDateColor    + "%Y-%m-%d", now);
+        const string time = Time::FormatString(digTimeColor    + (S_Dig24h ? "%H" : "%I") + ":%M" + (S_DigSeconds ? ":%S" : ""), now);
+        const string amPm = Time::FormatString(digAmPmColor    + "%p", now);
 
         UI::Text((S_DigWeekday ? day + " " : "") + (S_DigDate ? date + " " : "") + time + (!S_Dig24h && S_DigAmPm ? " " + amPm : ""));
     UI::End();
-    UI::PopFont();
 }
