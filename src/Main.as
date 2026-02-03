@@ -1,4 +1,5 @@
-string title = "\\$FAF" + Icons::ClockO + "\\$G Too Many Clocks";
+bool         timeFormatValid = false;
+const string title           = "\\$FAF" + Icons::ClockO + "\\$G Too Many Clocks";
 
 enum ClockStyle {
     Analog,
@@ -10,6 +11,8 @@ void Main() {
 }
 
 void OnSettingsChanged() {
+    VerifyTimeFormat();
+
     if (currentFont != S_DigFont) {
         ChangeFont();
     }

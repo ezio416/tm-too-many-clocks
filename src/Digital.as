@@ -14,7 +14,10 @@ void RenderDigital() {
 
     UI::PushFont(font);
     if (UI::Begin("TooManyClocks", S_Enabled, flags)) {
-        if (S_DigCustomFormat.Length > 0) {
+        if (true
+            and S_DigCustomFormat.Length > 0
+            and timeFormatValid
+        ) {
             UI::Text(Time::FormatString(S_DigCustomFormat, now));
             UI::End();
             UI::PopFont();
@@ -26,9 +29,17 @@ void RenderDigital() {
         string time = Time::FormatString(S_DigTimeColorStr    + (S_Dig24h ? "%H" : "%I") + ":%M" + (S_DigSeconds ? ":%S" : ""), now);
         string amPm = Time::FormatString(S_DigAmPmColorStr    + "%p", now);
 
-        UI::Text((S_DigWeekday ? day + " " : "") + (S_DigDate ? date + " " : "") + time + (!S_Dig24h && S_DigAmPm ? " " + amPm : ""));
+        UI::Text((S_DigWeekday ? day + " " : "") + (S_DigDate ? date + " " : "") + time + (!S_Dig24h and S_DigAmPm ? " " + amPm : ""));
     }
 
     UI::End();
     UI::PopFont();
+}
+
+// prevents most crashes
+void VerifyTimeFormat() {
+    timeFormatValid = true
+        and S_DigCustomFormat != "%"  // TODO regex below somehow doesn't account for any odd number of only %
+        and !Regex::Contains(S_DigCustomFormat, "(%[^aAbBcCdDeFgGhHIjmMnprRStTuUVwWxXyYzZ%])|([^%]%(%%)*$)")
+    ;
 }

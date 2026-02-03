@@ -79,7 +79,7 @@ ClockStyle S_ClockStyle = ClockStyle::Digital;
 [Setting category="Digital Style" name="Font style/size" description="loading a font for the first time causes game to hang for a bit"]
 Font S_DigFont = Font::DroidSans_16;
 
-[Setting category="Digital Style" name="Custom format" description="Overrides all styles and colors"]
+[Setting category="Digital Style" name="Custom format" description="Overrides all styles and colors" afterrender="VerifyTimeFormat"]
 string S_DigCustomFormat;
 
 [Setting category="Digital Style" name="Show weekday"]
