@@ -131,11 +131,13 @@ string S_DigAmPmColorStr;
 void LinksTab() {
     UI::Text("Color formatting requires double backslash before color codes like \"\\\\\\$$1D4\"");
 
-    if (UI::Button(Icons::ExternalLink + " Color formatting"))
+    if (UI::Button(Icons::ExternalLink + " Color formatting")) {
         OpenBrowserURL("https://doc.maniaplanet.com/client/text-formatting");
+    }
 
     UI::Text("Time formatting is standard strftime");
 
-    if (UI::Button(Icons::ExternalLink + " Time formatting"))
+    if (UI::Button(Icons::ExternalLink + " Time formatting")) {
         OpenBrowserURL("https://www.ibm.com/docs/en/workload-automation/10.2.0?topic=troubleshooting-date-time-format-reference-strftime");
+    }
 }

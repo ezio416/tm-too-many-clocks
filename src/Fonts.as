@@ -24,7 +24,6 @@ void ChangeFont() {
         case Font::DroidSansMono_16: @font = UI::LoadFont("DroidSansMono.ttf",  16, -1, -1, true, true, true); break;
         case Font::DroidSansMono_20: @font = UI::LoadFont("DroidSansMono.ttf",  20, -1, -1, true, true, true); break;
         case Font::DroidSansMono_26: @font = UI::LoadFont("DroidSansMono.ttf",  26, -1, -1, true, true, true); break;
-        default: break;
     }
 
     currentFont = S_DigFont;

@@ -1,17 +1,19 @@
 void RenderDigital() {
-    if (S_ClockStyle == ClockStyle::Analog)
+    if (S_ClockStyle == ClockStyle::Analog) {
         return;
+    }
 
-    int64 now = Time::Stamp;
+    const int64 now = Time::Stamp;
 
     int flags = UI::WindowFlags::AlwaysAutoResize |
                 UI::WindowFlags::NoTitleBar;
 
-    if (!UI::IsOverlayShown())
+    if (!UI::IsOverlayShown()) {
         flags |= UI::WindowFlags::NoInputs;
+    }
 
     UI::PushFont(font);
-    UI::Begin("TooManyClocks", S_Enabled, flags);
+    if (UI::Begin("TooManyClocks", S_Enabled, flags)) {
         if (S_DigCustomFormat != "") {
             UI::Text(Time::FormatString(S_DigCustomFormat, now));
             UI::End();
@@ -24,6 +26,8 @@ void RenderDigital() {
         string amPm = Time::FormatString(S_DigAmPmColorStr    + "%p", now);
 
         UI::Text((S_DigWeekday ? day + " " : "") + (S_DigDate ? date + " " : "") + time + (!S_Dig24h && S_DigAmPm ? " " + amPm : ""));
+    }
+
     UI::End();
     UI::PopFont();
 }

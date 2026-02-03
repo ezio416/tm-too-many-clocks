@@ -10,8 +10,9 @@ void Main() {
 }
 
 void OnSettingsChanged() {
-    if (currentFont != S_DigFont)
+    if (currentFont != S_DigFont) {
         ChangeFont();
+    }
 
     if (S_DigColors) {
         S_DigWeekdayColorStr = "\\" + Text::FormatGameColor(S_DigWeekdayColor);
@@ -27,20 +28,25 @@ void OnSettingsChanged() {
 }
 
 void Render() {
-    if (
-        !S_Enabled ||
-        (S_HideWithGame && !UI::IsGameUIVisible()) ||
-        (S_HideWithOP && !UI::IsOverlayShown())
-    )
+    if (false
+        or !S_Enabled
+        or (true
+            and S_HideWithGame
+            and !UI::IsGameUIVisible()
+        )
+        or (true
+            and S_HideWithOP
+            and !UI::IsOverlayShown()
+        )
+    ) {
         return;
+    }
 
-    if (!S_ShowInMenu) {
-        CTrackMania@ app = cast<CTrackMania@>(GetApp());
-
-        CSmArenaClient@ playground = cast<CSmArenaClient@>(app.CurrentPlayground);
-
-        if (playground is null)
-            return;
+    if (true
+        and !S_ShowInMenu
+        and cast<CSmArenaClient>(GetApp().CurrentPlayground) is null  // TODO other games
+    ) {
+        return;
     }
 
     // RenderAnalog();
@@ -48,8 +54,9 @@ void Render() {
 }
 
 void RenderMenu() {
-    if (UI::MenuItem(title, "", S_Enabled))
+    if (UI::MenuItem(title, "", S_Enabled)) {
         S_Enabled = !S_Enabled;
+    }
 }
 
 // void Update(float dt) {
