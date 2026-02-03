@@ -5,8 +5,10 @@ void RenderDigital() {
 
     const int64 now = Time::Stamp;
 
-    int flags = UI::WindowFlags::AlwaysAutoResize |
-                UI::WindowFlags::NoTitleBar;
+    int flags = UI::GetDefaultWindowFlags()
+        | UI::WindowFlags::AlwaysAutoResize
+        | UI::WindowFlags::NoTitleBar
+    ;
 
     if (!UI::IsOverlayShown()) {
         flags |= UI::WindowFlags::NoInputs;
