@@ -15,10 +15,10 @@ void OnSettingsChanged() {
     }
 
     if (S_DigColors) {
-        S_DigWeekdayColorStr = "\\" + Text::FormatGameColor(S_DigWeekdayColor);
-        S_DigDateColorStr    = "\\" + Text::FormatGameColor(S_DigDateColor);
-        S_DigTimeColorStr    = "\\" + Text::FormatGameColor(S_DigTimeColor);
-        S_DigAmPmColorStr    = "\\" + Text::FormatGameColor(S_DigAmPmColor);
+        S_DigWeekdayColorStr = Text::FormatOpenplanetColor(S_DigWeekdayColor);
+        S_DigDateColorStr    = Text::FormatOpenplanetColor(S_DigDateColor);
+        S_DigTimeColorStr    = Text::FormatOpenplanetColor(S_DigTimeColor);
+        S_DigAmPmColorStr    = Text::FormatOpenplanetColor(S_DigAmPmColor);
     } else {
         S_DigWeekdayColorStr = "\\$G";
         S_DigDateColorStr    = "\\$G";

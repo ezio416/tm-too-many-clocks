@@ -14,9 +14,10 @@ void RenderDigital() {
 
     UI::PushFont(font);
     if (UI::Begin("TooManyClocks", S_Enabled, flags)) {
-        if (S_DigCustomFormat != "") {
+        if (S_DigCustomFormat.Length > 0) {
             UI::Text(Time::FormatString(S_DigCustomFormat, now));
             UI::End();
+            UI::PopFont();
             return;
         }
 
