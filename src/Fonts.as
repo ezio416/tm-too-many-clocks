@@ -1,6 +1,3 @@
-// c 2023-08-04
-// m 2023-10-19
-
 UI::Font@ font;
 Font currentFont = S_DigFont;
 

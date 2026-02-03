@@ -1,6 +1,3 @@
-// c 2023-10-18
-// m 2023-11-22
-
 string title = "\\$FAF" + Icons::ClockO + "\\$G Too Many Clocks";
 
 enum ClockStyle {

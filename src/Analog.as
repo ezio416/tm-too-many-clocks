@@ -1,6 +1,3 @@
-// c 2023-10-19
-// m 2023-11-22
-
 // float msSinceFrame;
 // float scale = UI::GetScale();
 

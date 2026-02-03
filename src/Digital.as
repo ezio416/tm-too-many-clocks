@@ -1,6 +1,3 @@
-// c 2023-10-18
-// m 2023-10-19
-
 void RenderDigital() {
     if (S_ClockStyle == ClockStyle::Analog)
         return;
