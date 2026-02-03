@@ -47,7 +47,11 @@ void Render() {
 
     if (true
         and !S_ShowInMenu
-        and cast<CSmArenaClient>(GetApp().CurrentPlayground) is null  // TODO other games
+#if TMNEXT
+        and cast<CSmArenaClient>(GetApp().CurrentPlayground) is null
+#else
+        and GetApp().CurrentPlayground is null
+#endif
     ) {
         return;
     }
