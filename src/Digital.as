@@ -13,6 +13,12 @@ void RenderDigital() {
     }
 
     UI::PushFont(font, S_FontSize);
+
+    const vec4 styleText     = UI::GetStyleColor(UI::Col::Text);
+    const vec4 styleWindowBg = UI::GetStyleColor(UI::Col::WindowBg);
+    UI::PushStyleColor(UI::Col::Text,     vec4(styleText.xyz,     Math::Min(S_Opacity, styleText.w)));
+    UI::PushStyleColor(UI::Col::WindowBg, vec4(styleWindowBg.xyz, Math::Min(S_Opacity, styleWindowBg.w)));
+
     if (UI::Begin("TooManyClocks", S_Enabled, flags)) {
         if (true
             and S_DigCustomFormat.Length > 0
@@ -33,6 +39,7 @@ void RenderDigital() {
     }
 
     UI::End();
+    UI::PopStyleColor(2);
     UI::PopFont();
 }
 

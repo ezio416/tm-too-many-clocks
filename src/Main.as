@@ -13,6 +13,8 @@ void Main() {
 void OnSettingsChanged() {
     VerifyTimeFormat();
 
+    S_Opacity = Math::Clamp(S_Opacity, 0.05f, 1.0f);
+
     if (currentFont != S_Font) {
         ChangeFont();
     }

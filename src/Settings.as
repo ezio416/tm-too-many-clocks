@@ -10,6 +10,9 @@ bool S_HideWithOP = false;
 [Setting category="Visibility" name="Show in main menu"]
 bool S_ShowInMenu = true;
 
+[Setting category="Visibility" name="Opacity" min=0.05f max=1.0f]
+float S_Opacity = 1.0f;
+
 // [Setting category="Visibility" name="Clock style"]
 ClockStyle S_ClockStyle = ClockStyle::Digital;
 
