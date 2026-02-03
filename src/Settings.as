@@ -76,9 +76,6 @@ ClockStyle S_ClockStyle = ClockStyle::Digital;
 // int S_AnaSize = 200;
 
 
-[Setting category="Digital Style" name="Font style/size" description="loading a font for the first time causes game to hang for a bit"]
-Font S_DigFont = Font::DroidSans_16;
-
 [Setting category="Digital Style" name="Custom format" description="Overrides all styles and colors" afterrender="VerifyTimeFormat"]
 string S_DigCustomFormat;
 
@@ -127,7 +124,17 @@ string S_DigAmPmColorStr;
 // float S_DigY = 0.25f;
 
 
-[SettingsTab name="Links" icon="Link"]
+[Setting category="Digital Font" name="Font" hidden]
+Font S_Font = Font::DroidSans;
+
+[Setting category="Digital Font" name="Font (system)" hidden]
+string S_SystemFont;
+
+[Setting category="Digital Font" name="Font size" min=8 max=72 hidden]
+int S_FontSize = 16;
+
+
+[SettingsTab name="Links" icon="Link" order=2]
 void LinksTab() {
     UI::Text("Color formatting requires double backslash before color codes like \"\\\\\\$$1D4\"");
 

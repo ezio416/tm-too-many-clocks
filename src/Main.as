@@ -13,7 +13,7 @@ void Main() {
 void OnSettingsChanged() {
     VerifyTimeFormat();
 
-    if (currentFont != S_DigFont) {
+    if (currentFont != S_Font) {
         ChangeFont();
     }
 

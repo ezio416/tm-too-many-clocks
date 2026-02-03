@@ -12,7 +12,7 @@ void RenderDigital() {
         flags |= UI::WindowFlags::NoInputs;
     }
 
-    UI::PushFont(font);
+    UI::PushFont(font, S_FontSize);
     if (UI::Begin("TooManyClocks", S_Enabled, flags)) {
         if (true
             and S_DigCustomFormat.Length > 0
