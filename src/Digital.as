@@ -26,18 +26,15 @@ void RenderDigital() {
             and S_DigCustomFormat.Length > 0
             and timeFormatValid
         ) {
-            UI::Text(Time::FormatString(S_DigCustomFormat, now));
-            UI::End();
-            UI::PopFont();
-            return;
+            UI::Text(Time::FormatString(Text::OpenplanetFormatCodes(S_DigCustomFormat), now));
+        } else {
+            string day  = Time::FormatString(S_DigWeekdayColorStr + (S_DigWeekdayFull ? "%A" : "%a"), now);
+            string date = Time::FormatString(S_DigDateColorStr    + "%Y-%m-%d", now);
+            string time = Time::FormatString(S_DigTimeColorStr    + (S_Dig24h ? "%H" : "%I") + ":%M" + (S_DigSeconds ? ":%S" : ""), now);
+            string amPm = Time::FormatString(S_DigAmPmColorStr    + "%p", now);
+
+            UI::Text((S_DigWeekday ? day + " " : "") + (S_DigDate ? date + " " : "") + time + (!S_Dig24h and S_DigAmPm ? " " + amPm : ""));
         }
-
-        string day  = Time::FormatString(S_DigWeekdayColorStr + (S_DigWeekdayFull ? "%A" : "%a"), now);
-        string date = Time::FormatString(S_DigDateColorStr    + "%Y-%m-%d", now);
-        string time = Time::FormatString(S_DigTimeColorStr    + (S_Dig24h ? "%H" : "%I") + ":%M" + (S_DigSeconds ? ":%S" : ""), now);
-        string amPm = Time::FormatString(S_DigAmPmColorStr    + "%p", now);
-
-        UI::Text((S_DigWeekday ? day + " " : "") + (S_DigDate ? date + " " : "") + time + (!S_Dig24h and S_DigAmPm ? " " + amPm : ""));
     }
 
     UI::End();

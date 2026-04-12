@@ -139,7 +139,7 @@ int S_FontSize = 16;
 
 [SettingsTab name="Links" icon="Link" order=2]
 void LinksTab() {
-    UI::Text("Color formatting requires double backslash before color codes like \"\\\\\\$$1D4\"");
+    UI::Text('Color formatting example: "$1D4"');
 
     if (UI::Button(Icons::ExternalLink + " Color formatting")) {
         OpenBrowserURL("https://doc.maniaplanet.com/client/text-formatting");
